@@ -1,16 +1,21 @@
 import { FC } from 'react'
 import { styled } from '@mui/material'
+import { useRecoilValue } from 'recoil'
 
+import { lettersAtom } from '@/store'
 import { LetterRow } from './components'
 
-const rowArray = [1, 2, 3, 4, 5, 6]
-
 export const Letters: FC = () => {
+  const letters = useRecoilValue(lettersAtom)
   return (
     <Container>
       <InnerContainer>
-        {rowArray.map(() => (
-          <LetterRow />
+        {letters.map((letterConfig, index) => (
+          <LetterRow
+            key={index}
+            rowNumber={index + 1}
+            letterConfig={letterConfig}
+          />
         ))}
       </InnerContainer>
     </Container>

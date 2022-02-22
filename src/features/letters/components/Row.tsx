@@ -1,18 +1,22 @@
 import { FC } from 'react'
 import { styled } from '@mui/material'
 
+import { LetterBox } from '@/store'
 import { Box } from './Box'
 
-const columnArray = [1, 2, 3, 4, 5]
-
-export const LetterRow: FC = () => {
+export const LetterRow: FC<Props> = ({ letterConfig, rowNumber }) => {
   return (
     <Row>
-      {columnArray.map(columnNumber => (
-        <Box key={columnNumber} />
+      {letterConfig.map((letterBox, index) => (
+        <Box key={`${rowNumber}-${index + 1}`} {...letterBox} />
       ))}
     </Row>
   )
+}
+
+interface Props {
+  letterConfig: LetterBox[]
+  rowNumber: number
 }
 
 const Row = styled('div')`
