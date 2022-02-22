@@ -1,11 +1,16 @@
 import { FC } from 'react'
 import { styled } from '@mui/material'
 
-import { KeyboardKey } from '../api'
+import { KeyboardKey, useSendKeyboardInput } from '../api'
 
 export const KeyboardButton: FC<Props> = ({ text, width, isBlank }) => {
+  const { sendInput } = useSendKeyboardInput()
   if (isBlank) return <BlankButton />
-  return <Button width={width}>{text}</Button>
+  return (
+    <Button onClick={() => sendInput(text)} width={width}>
+      {text}
+    </Button>
+  )
 }
 
 interface ButtonProps {

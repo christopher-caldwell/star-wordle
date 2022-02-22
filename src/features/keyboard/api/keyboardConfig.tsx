@@ -2,6 +2,8 @@ import BackspaceIcon from '@mui/icons-material/BackspaceOutlined'
 
 const standardWidth = 1
 
+export const deleteText = 'delete'
+
 export const topRowOfKeys: KeyboardKey[] = [
   {
     width: standardWidth,
@@ -48,7 +50,7 @@ export const topRowOfKeys: KeyboardKey[] = [
 export const middleRowOfKeys: KeyboardKey[] = [
   {
     width: standardWidth,
-    text: '',
+    text: 'left-space',
     isBlank: true,
   },
   {
@@ -89,7 +91,7 @@ export const middleRowOfKeys: KeyboardKey[] = [
   },
   {
     width: standardWidth,
-    text: '',
+    text: 'right-space',
     isBlank: true,
   },
 ]
@@ -129,7 +131,8 @@ export const bottomRowOfKeys: KeyboardKey[] = [
   },
   {
     width: 1.5,
-    text: <BackspaceIcon />,
+    text: deleteText,
+    content: <BackspaceIcon />,
   },
 ]
 
@@ -141,7 +144,8 @@ export const keyboardConfig: KeyboardKey[][] = [
 
 export interface KeyboardKey {
   width: string | number
-  text: string | JSX.Element
+  text: string
+  content?: JSX.Element
   /** UI trickery to create the spacing in the middle keyboard row */
   isBlank?: boolean
 }

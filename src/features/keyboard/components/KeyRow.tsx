@@ -8,7 +8,7 @@ export const KeyboardRow: FC<Props> = ({ keys }) => {
   return (
     <Container>
       {keys.map(key => (
-        <KeyboardButton key={typeof key.text === 'string' ? key.text : 'delete'} {...key} />
+        <KeyboardButton key={key.text} {...key} />
       ))}
     </Container>
   )

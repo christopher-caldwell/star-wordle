@@ -7,6 +7,7 @@ import { LetterRow } from './components'
 
 export const Letters: FC = () => {
   const letters = useRecoilValue(lettersAtom)
+  console.log('letters', letters)
   return (
     <Container>
       <InnerContainer>
