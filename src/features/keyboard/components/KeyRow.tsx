@@ -18,6 +18,7 @@ const Container = styled('div')`
   display: flex;
   justify-content: center;
   margin-bottom: 8px;
+  width: 100%;
 `
 
 interface Props {

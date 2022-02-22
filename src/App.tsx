@@ -21,6 +21,7 @@ const MainContainer = styled('main')`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  width: 100vw;
 `
 const Root = styled('div')`
   padding-top: 60px;

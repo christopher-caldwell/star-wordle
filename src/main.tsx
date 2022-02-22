@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
+import { RecoilRoot } from 'recoil'
 
 import { ChosenThemeProvider, ThemeProvider } from '@/providers'
 import App from './App'
@@ -8,9 +9,11 @@ ReactDOM.render(
   <StrictMode>
     <ChosenThemeProvider>
       <ThemeProvider>
-        <App />
+        <RecoilRoot>
+          <App />
+        </RecoilRoot>
       </ThemeProvider>
     </ChosenThemeProvider>
   </StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 )

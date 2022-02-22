@@ -1,7 +1,11 @@
 import { FC } from 'react'
 import { styled } from '@mui/material'
 
-import { topRowOfKeys, middleRowOfKeys, bottomRowOfKeys } from '@/features/keyboard/api'
+import {
+  topRowOfKeys,
+  middleRowOfKeys,
+  bottomRowOfKeys,
+} from '@/features/keyboard/api'
 import { KeyboardRow } from './components'
 
 export const Keyboard: FC = () => {
@@ -19,11 +23,13 @@ export const Keyboard: FC = () => {
 const InnerContainer = styled('div')`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  width: 95%;
 `
 const Container = styled('div')`
   display: flex;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   flex-grow: 1;
+  max-height: 250px;
 `

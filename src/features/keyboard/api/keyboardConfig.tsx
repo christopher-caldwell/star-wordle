@@ -1,131 +1,147 @@
 import BackspaceIcon from '@mui/icons-material/BackspaceOutlined'
 
-const standardWidth = 33
+const standardWidth = 1
 
 export const topRowOfKeys: KeyboardKey[] = [
   {
     width: standardWidth,
-    text: 'Q'
+    text: 'Q',
   },
   {
     width: standardWidth,
-    text: 'W'
+    text: 'W',
   },
   {
     width: standardWidth,
-    text: 'E'
+    text: 'E',
   },
   {
     width: standardWidth,
-    text: 'R'
+    text: 'R',
   },
   {
     width: standardWidth,
-    text: 'T'
+    text: 'T',
   },
   {
     width: standardWidth,
-    text: 'Y'
+    text: 'Y',
   },
   {
     width: standardWidth,
-    text: 'U'
+    text: 'U',
   },
   {
     width: standardWidth,
-    text: 'I'
+    text: 'I',
   },
   {
     width: standardWidth,
-    text: 'O'
+    text: 'O',
   },
   {
     width: standardWidth,
-    text: 'P'
-  }
+    text: 'P',
+  },
 ]
 
 export const middleRowOfKeys: KeyboardKey[] = [
   {
     width: standardWidth,
-    text: 'A'
+    text: '',
+    isBlank: true,
   },
   {
     width: standardWidth,
-    text: 'S'
+    text: 'A',
   },
   {
     width: standardWidth,
-    text: 'D'
+    text: 'S',
   },
   {
     width: standardWidth,
-    text: 'F'
+    text: 'D',
   },
   {
     width: standardWidth,
-    text: 'G'
+    text: 'F',
   },
   {
     width: standardWidth,
-    text: 'H'
+    text: 'G',
   },
   {
     width: standardWidth,
-    text: 'J'
+    text: 'H',
   },
   {
     width: standardWidth,
-    text: 'K'
+    text: 'J',
   },
   {
     width: standardWidth,
-    text: 'L'
-  }
+    text: 'K',
+  },
+  {
+    width: standardWidth,
+    text: 'L',
+  },
+  {
+    width: standardWidth,
+    text: '',
+    isBlank: true,
+  },
 ]
 
 export const bottomRowOfKeys: KeyboardKey[] = [
   {
-    width: 60,
-    text: 'ENTER'
+    width: 1.5,
+    text: 'ENTER',
   },
   {
     width: standardWidth,
-    text: 'Z'
+    text: 'Z',
   },
   {
     width: standardWidth,
-    text: 'X'
+    text: 'X',
   },
   {
     width: standardWidth,
-    text: 'C'
+    text: 'C',
   },
   {
     width: standardWidth,
-    text: 'V'
+    text: 'V',
   },
   {
     width: standardWidth,
-    text: 'B'
+    text: 'B',
   },
   {
     width: standardWidth,
-    text: 'N'
+    text: 'N',
   },
   {
     width: standardWidth,
-    text: 'M'
+    text: 'M',
   },
   {
-    width: 50,
-    text: <BackspaceIcon />
-  }
+    width: 1.5,
+    text: <BackspaceIcon />,
+  },
 ]
 
-export const keyboardConfig: KeyboardKey[][] = [topRowOfKeys, middleRowOfKeys, bottomRowOfKeys]
+export const keyboardConfig: KeyboardKey[][] = [
+  topRowOfKeys,
+  middleRowOfKeys,
+  bottomRowOfKeys,
+]
 
 export interface KeyboardKey {
   width: string | number
   text: string | JSX.Element
+  /** UI trickery to create the spacing in the middle keyboard row */
+  isBlank?: boolean
 }

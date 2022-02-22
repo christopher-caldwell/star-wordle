@@ -2,12 +2,7 @@ import { FC } from 'react'
 import { styled, useTheme } from '@mui/material'
 import shouldForwardProp from '@emotion/is-prop-valid'
 
-enum Status {
-  Miss = 'miss',
-  Hit = 'hit',
-  OutOfOrder = 'outOfOrder',
-  Open = 'open'
-}
+import { Status } from '@/store'
 
 export const Box: FC = () => {
   const boxColor = useDetermineBackgroundColor(Status.Open)
@@ -21,8 +16,8 @@ interface BoxContainerProps {
 const Container = styled('div', { shouldForwardProp })<BoxContainerProps>`
   display: flex;
   border: 2px solid ${({ theme: { palette } }) => (palette.mode === 'dark' ? palette.grey[800] : palette.grey[400])};
-  height: 58px;
-  width: 58px;
+  height: 60px;
+  width: 60px;
   margin: 2px;
   justify-content: center;
   align-items: center;
