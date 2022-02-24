@@ -6,7 +6,7 @@ export enum Status {
   Miss = 'miss',
   Hit = 'hit',
   OutOfOrder = 'outOfOrder',
-  Open = 'open',
+  Open = 'open'
 }
 
 export interface LetterBox {
@@ -16,14 +16,12 @@ export interface LetterBox {
 
 export const defaultLetterConfig: LetterBox = {
   letter: '',
-  status: Status.Open,
+  status: Status.Open
 }
-export const defaultColumnConfig: LetterBox[] = new Array(5).fill(
-  defaultLetterConfig,
-)
+export const defaultColumnConfig: LetterBox[] = new Array(5).fill(defaultLetterConfig)
 
 /** 2d array for storing the rows and columns */
 export const lettersAtom = atom<LetterBox[][]>({
   key: AtomKeys.letters,
-  default: new Array(6).fill(defaultColumnConfig),
+  default: new Array(6).fill(defaultColumnConfig)
 })

@@ -15,9 +15,7 @@ interface BoxContainerProps {
 
 const Container = styled('div', { shouldForwardProp })<BoxContainerProps>`
   display: flex;
-  border: 2px solid
-    ${({ theme: { palette } }) =>
-      palette.mode === 'dark' ? palette.grey[800] : palette.grey[400]};
+  border: 2px solid ${({ theme: { palette } }) => (palette.mode === 'dark' ? palette.grey[800] : palette.grey[400])};
   height: 60px;
   width: 60px;
   margin: 2px;
@@ -29,7 +27,7 @@ const Container = styled('div', { shouldForwardProp })<BoxContainerProps>`
 
 const useDetermineBackgroundColor = (status: Status): string => {
   const {
-    palette: { success, error, warning, background },
+    palette: { success, error, warning, background }
   } = useTheme()
   if (status === Status.Hit) return success.main
   if (status === Status.Miss) return error.main

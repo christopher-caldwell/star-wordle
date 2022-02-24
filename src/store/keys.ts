@@ -1,6 +1,6 @@
 export enum AtomKeys {
   letters = 'letters',
-  currentPosition = 'currentPosition',
+  currentPosition = 'currentPosition'
 }
 
 export const ensureKeysAreUnique = <KeyType>(keys: KeyType): boolean => {

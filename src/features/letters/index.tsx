@@ -12,11 +12,7 @@ export const Letters: FC = () => {
     <Container>
       <InnerContainer>
         {letters.map((letterConfig, index) => (
-          <LetterRow
-            key={index}
-            rowNumber={index + 1}
-            letterConfig={letterConfig}
-          />
+          <LetterRow key={index} rowNumber={index + 1} letterConfig={letterConfig} />
         ))}
       </InnerContainer>
     </Container>

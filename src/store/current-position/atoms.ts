@@ -6,8 +6,8 @@ export const currentPositionAtom = atom<CurrentPosition>({
   key: AtomKeys.currentPosition,
   default: {
     column: 0,
-    row: 0,
-  },
+    row: 0
+  }
 })
 
 interface CurrentPosition {

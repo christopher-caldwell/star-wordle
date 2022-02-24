@@ -1,11 +1,7 @@
 import { FC } from 'react'
 import { styled } from '@mui/material'
 
-import {
-  topRowOfKeys,
-  middleRowOfKeys,
-  bottomRowOfKeys,
-} from '@/features/keyboard/api'
+import { topRowOfKeys, middleRowOfKeys, bottomRowOfKeys } from '@/features/keyboard/api'
 import { KeyboardRow } from './components'
 
 export const Keyboard: FC = () => {

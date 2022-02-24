@@ -5,36 +5,42 @@ import { deleteText } from '.'
 
 export const useSendKeyboardInput = () => {
   const [letterConfig, setLetterConfig] = useRecoilState(lettersAtom)
-  const [{ column, row }, setCurrentPosition] =
-    useRecoilState(currentPositionAtom)
+  const [{ column, row }, setCurrentPosition] = useRecoilState(currentPositionAtom)
 
   const submitAnswer = () => {
     console.log('submitting')
+    return true
   }
 
   const increasePosition = () => {
-    setCurrentPosition((currentPosition) => {
+    setCurrentPosition(currentPosition => {
       if (currentPosition.column === 4) {
-        submitAnswer()
-        return currentPosition
+        const isValidSubmission = submitAnswer()
+
+        return isValidSubmission
+          ? {
+              column: 1,
+              row: row + 1
+            }
+          : currentPosition
       }
       return {
         column: currentPosition.column + 1,
-        row,
+        row
       }
     })
   }
 
   const handleDelete = () => {
-    setCurrentPosition((currentPosition) => {
+    setCurrentPosition(currentPosition => {
       if (currentPosition.column === 0)
         return {
           column,
-          row,
+          row
         }
       return {
         column: currentPosition.column - 1,
-        row,
+        row
       }
     })
   }
@@ -47,17 +53,14 @@ export const useSendKeyboardInput = () => {
     const isErasingInput = letter === ''
     const targetColumn = isErasingInput ? column - 1 : column
 
-    setLetterConfig((currentLetterConfig) => {
+    setLetterConfig(currentLetterConfig => {
       const mutableLetterConfig = [...currentLetterConfig]
       const mutableRowConfig = [...mutableLetterConfig[row]]
-      const mutableColumnConfig = Object.assign(
-        {},
-        mutableRowConfig[targetColumn],
-      )
+      const mutableColumnConfig = Object.assign({}, mutableRowConfig[targetColumn])
 
       if (mutableColumnConfig === undefined) {
         throw new Error(
-          `[useSendKeyboardInput]: Trying to access invalid position: Row: ${row}, Column: ${targetColumn}`,
+          `[useSendKeyboardInput]: Trying to access invalid position: Row: ${row}, Column: ${targetColumn}`
         )
       }
 
@@ -71,6 +74,6 @@ export const useSendKeyboardInput = () => {
   }
 
   return {
-    sendInput,
+    sendInput
   }
 }

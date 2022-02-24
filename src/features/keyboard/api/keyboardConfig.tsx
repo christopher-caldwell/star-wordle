@@ -7,140 +7,136 @@ export const deleteText = 'delete'
 export const topRowOfKeys: KeyboardKey[] = [
   {
     width: standardWidth,
-    text: 'Q',
+    text: 'Q'
   },
   {
     width: standardWidth,
-    text: 'W',
+    text: 'W'
   },
   {
     width: standardWidth,
-    text: 'E',
+    text: 'E'
   },
   {
     width: standardWidth,
-    text: 'R',
+    text: 'R'
   },
   {
     width: standardWidth,
-    text: 'T',
+    text: 'T'
   },
   {
     width: standardWidth,
-    text: 'Y',
+    text: 'Y'
   },
   {
     width: standardWidth,
-    text: 'U',
+    text: 'U'
   },
   {
     width: standardWidth,
-    text: 'I',
+    text: 'I'
   },
   {
     width: standardWidth,
-    text: 'O',
+    text: 'O'
   },
   {
     width: standardWidth,
-    text: 'P',
-  },
+    text: 'P'
+  }
 ]
 
 export const middleRowOfKeys: KeyboardKey[] = [
   {
     width: standardWidth,
     text: 'left-space',
-    isBlank: true,
+    isBlank: true
   },
   {
     width: standardWidth,
-    text: 'A',
+    text: 'A'
   },
   {
     width: standardWidth,
-    text: 'S',
+    text: 'S'
   },
   {
     width: standardWidth,
-    text: 'D',
+    text: 'D'
   },
   {
     width: standardWidth,
-    text: 'F',
+    text: 'F'
   },
   {
     width: standardWidth,
-    text: 'G',
+    text: 'G'
   },
   {
     width: standardWidth,
-    text: 'H',
+    text: 'H'
   },
   {
     width: standardWidth,
-    text: 'J',
+    text: 'J'
   },
   {
     width: standardWidth,
-    text: 'K',
+    text: 'K'
   },
   {
     width: standardWidth,
-    text: 'L',
+    text: 'L'
   },
   {
     width: standardWidth,
     text: 'right-space',
-    isBlank: true,
-  },
+    isBlank: true
+  }
 ]
 
 export const bottomRowOfKeys: KeyboardKey[] = [
   {
     width: 1.5,
-    text: 'ENTER',
+    text: 'ENTER'
   },
   {
     width: standardWidth,
-    text: 'Z',
+    text: 'Z'
   },
   {
     width: standardWidth,
-    text: 'X',
+    text: 'X'
   },
   {
     width: standardWidth,
-    text: 'C',
+    text: 'C'
   },
   {
     width: standardWidth,
-    text: 'V',
+    text: 'V'
   },
   {
     width: standardWidth,
-    text: 'B',
+    text: 'B'
   },
   {
     width: standardWidth,
-    text: 'N',
+    text: 'N'
   },
   {
     width: standardWidth,
-    text: 'M',
+    text: 'M'
   },
   {
     width: 1.5,
     text: deleteText,
-    content: <BackspaceIcon />,
-  },
+    content: <BackspaceIcon />
+  }
 ]
 
-export const keyboardConfig: KeyboardKey[][] = [
-  topRowOfKeys,
-  middleRowOfKeys,
-  bottomRowOfKeys,
-]
+export const keyboardConfig: KeyboardKey[][] = [topRowOfKeys, middleRowOfKeys, bottomRowOfKeys]
 
 export interface KeyboardKey {
   width: string | number
